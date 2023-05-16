@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:invoice_app/modal/pro_modals.dart';
 import 'package:invoice_app/utils/routes_utils.dart';
 
 class homepage extends StatefulWidget {
@@ -15,7 +16,7 @@ class _homepageState extends State<homepage> {
     Size s = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.account_circle,color: Colors.transparent),
+        leading: const Icon(Icons.account_circle, color: Colors.transparent),
         // Shopping
         title: Text(
           "Shopping",
@@ -34,8 +35,7 @@ class _homepageState extends State<homepage> {
             children: [
               IconButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(allroutes.favouritproductsepage);
+                  Navigator.of(context).pushNamed(allroutes.favouritproductsepage);
                 },
                 icon: Icon(
                   Icons.favorite_border_rounded,
@@ -114,9 +114,8 @@ class _homepageState extends State<homepage> {
                         width: double.infinity,
                         height: s.height * 0.69,
                         child: GridView.builder(
-                          itemCount: 10,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
+                          itemCount: allproduct.length,
+                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisSpacing: 10,
                             mainAxisSpacing: 10,
                             childAspectRatio: 2 / 3,
@@ -125,20 +124,64 @@ class _homepageState extends State<homepage> {
                           itemBuilder: (context, index) {
                             return GestureDetector(
                               onTap: () {
-                                Navigator.of(context)
-                                    .pushNamed(allroutes.productdetailpage);
+                                Navigator.of(context).pushNamed(allroutes.productdetailpage, arguments: index);
                               },
                               child: Container(
-                                height: 200,
-                                width: 300,
-                                decoration: const BoxDecoration(
-                                  color: Colors.black26,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(20),
-                                    topRight: Radius.circular(20),
-                                    bottomLeft: Radius.circular(10),
-                                    bottomRight: Radius.circular(10),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(
+                                    image: NetworkImage(allproduct[index].thumbnail),
+                                    fit: BoxFit.cover,
                                   ),
+                                  // borderRadius: const BorderRadius.only(
+                                  //   topLeft: Radius.circular(20),
+                                  //   topRight: Radius.circular(20),
+                                  //   bottomLeft: Radius.circular(10),
+                                  //   bottomRight: Radius.circular(10),
+                                  // ),
+                                ),
+                                child: Row(
+                                  children: [
+                                    SizedBox(width: s.width * 0.02),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        // SizedBox(
+                                        //   height: s.height * 0.22,
+                                        //   width: double.infinity,
+                                        //   child: Image.network(
+                                        //     allproduct[index].thumbnail,
+                                        //     fit: BoxFit.fill,
+                                        //   ),
+                                        // ),
+                                        SizedBox(height: s.height * 0.1),
+                                        Text(
+                                          "\$ ${allproduct[index].price}",
+                                          style: GoogleFonts.tiroGurmukhi(
+                                            textStyle: TextStyle(
+                                              fontSize: s.height * 0.02,
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          allproduct[index].brand,
+                                          style: GoogleFonts.tiroGurmukhi(
+                                            textStyle: TextStyle(
+                                              fontSize: s.height * 0.015,
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          allproduct[index].title,
+                                          style: GoogleFonts.tiroGurmukhi(
+                                            textStyle: TextStyle(
+                                              fontSize: s.height * 0.015,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
                                 ),
                               ),
                             );
@@ -169,18 +212,17 @@ class _homepageState extends State<homepage> {
                     },
                     icon: const Icon(
                       Icons.menu_rounded,
-                      size: 40,
+                      size: 35,
                     ),
                   ),
                   const Spacer(),
                   IconButton(
                     onPressed: () {
-                      Navigator.of(context)
-                          .pushNamed(allroutes.favouritproductsepage);
+                      Navigator.of(context).pushNamed(allroutes.favouritproductsepage);
                     },
                     icon: const Icon(
                       Icons.favorite_border_rounded,
-                      size: 40,
+                      size: 35,
                     ),
                   ),
                   const Spacer(),
@@ -190,7 +232,7 @@ class _homepageState extends State<homepage> {
                     },
                     icon: const Icon(
                       Icons.shopping_cart_rounded,
-                      size: 40,
+                      size: 35,
                     ),
                   ),
                   const Spacer(),
@@ -200,7 +242,7 @@ class _homepageState extends State<homepage> {
                     },
                     icon: const Icon(
                       Icons.account_circle,
-                      size: 40,
+                      size: 35,
                     ),
                   ),
                   const Spacer(),

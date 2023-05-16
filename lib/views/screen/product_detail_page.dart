@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:invoice_app/modal/pro_modals.dart';
 import 'package:invoice_app/utils/routes_utils.dart';
 
 class product_detail_page extends StatefulWidget {
@@ -13,6 +14,7 @@ class _product_detail_pageState extends State<product_detail_page> {
   @override
   Widget build(BuildContext context) {
     Size s = MediaQuery.of(context).size;
+    int index = ModalRoute.of(context)!.settings.arguments as int;
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -34,8 +36,7 @@ class _product_detail_pageState extends State<product_detail_page> {
             children: [
               IconButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(allroutes.favouritproductsepage);
+                  Navigator.of(context).pushNamed(allroutes.favouritproductsepage);
                 },
                 icon: Icon(
                   Icons.favorite_border_rounded,
@@ -65,30 +66,28 @@ class _product_detail_pageState extends State<product_detail_page> {
         ),
         child: Column(
           children: [
-            SizedBox(height: s.height * 0.04),
+            SizedBox(height: s.height * 0.1),
             Container(
               height: s.height * 0.5,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: SingleChildScrollView(
+              child: GridView.builder(
+                itemCount: allproduct.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 2 / 3,
+                  crossAxisCount: 1,
+                ),
                 scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Image.network(
-                      'https://i.dummyjson.com/data/products/1/thumbnail.jpg',
-                    ),
-                    SizedBox(width: s.width * 0.02),
-                    Image.network(
-                      'https://i.dummyjson.com/data/products/1/2.jpg',
-                    ),
-                    SizedBox(width: s.width * 0.02),
-                    Image.network(
-                      'https://i.dummyjson.com/data/products/1/1.jpg',
-                    ),
-                    SizedBox(width: s.width * 0.02),
-                  ],
+                itemBuilder: (context, index) => Container(
+                  height: s.height * 0.02,
+                  width: s.width * 0.05,
+                  child: Image.network(
+                    allproduct[index].images as String,
+                  ),
                 ),
               ),
             ),
