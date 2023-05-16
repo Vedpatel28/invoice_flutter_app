@@ -238,7 +238,7 @@ List<Map> allpoductdetail = [
   },
   {
     "id": 14,
-    "title": "Non-Alcoholic Concentrated Perfume Oil",
+    "title": "Perfume",
     "description": "Original Al Munakh® by Mahal Al Musk | Our Impression of Climate | 6ml Non-Alcoholic Concentrated Perfume Oil",
     "price": 120,
     "discountPercentage": 15.6,
@@ -1581,7 +1581,7 @@ List<Map> allpoductdetail = [
   },
   {
     "id": 87,
-    "title": "t Temperature Controller Incubator Controller",
+    "title": "Incubator Controller",
     "description":
         "Both Heat and Cool Purpose, Temperature control range; -50 to +110, Temperature measurement accuracy; 0.1, Control accuracy; 0.1",
     "price": 40,
@@ -1601,7 +1601,7 @@ List<Map> allpoductdetail = [
   },
   {
     "id": 88,
-    "title": "TC Reusable Silicone Magic Washing Gloves",
+    "title": "Washing Gloves",
     "description":
         "TC Reusable Silicone Magic Washing Gloves with Scrubber, Cleaning Brush Scrubber Gloves Heat Resistant Pair for Cleaning of Kitchen, Dishes, Vegetables and Fruits, Bathroom, Car Wash, Pet Care and Multipurpose",
     "price": 29,
@@ -1667,7 +1667,7 @@ List<Map> allpoductdetail = [
     "discountPercentage": 13.63,
     "rating": 4.04,
     "stock": 115,
-    "brand": "METRO 70cc Motorcycle - MR70",
+    "brand": "METRO 70cc MR70",
     "category": "motorcycle",
     "thumbnail": "https://i.dummyjson.com/data/products/91/thumbnail.jpg",
     "images": [
@@ -1680,7 +1680,7 @@ List<Map> allpoductdetail = [
   },
   {
     "id": 92,
-    "title": "HOT SALE IN EUROPE electric racing motorcycle",
+    "title": " motorcycle",
     "description": "HOT SALE IN EUROPE electric racing motorcycle electric motorcycle for sale adult electric motorcycles",
     "price": 920,
     "discountPercentage": 14.4,
@@ -1792,7 +1792,7 @@ List<Map> allpoductdetail = [
   },
   {
     "id": 98,
-    "title": "3 lights lndenpant kitchen islang",
+    "title": "3 lights kitchen",
     "description":
         "3 lights lndenpant kitchen islang dining room pendant rice paper chandelier contemporary led pendant light modern chandelier",
     "price": 34,
@@ -1812,7 +1812,7 @@ List<Map> allpoductdetail = [
   },
   {
     "id": 99,
-    "title": "American Vintage Wood Pendant Light",
+    "title": "Wood Pendant Light",
     "description": "American Vintage Wood Pendant Light Farmhouse Antique Hanging Lamp Lampara Colgante",
     "price": 46,
     "discountPercentage": 8.84,
@@ -1831,7 +1831,7 @@ List<Map> allpoductdetail = [
   },
   {
     "id": 100,
-    "title": "Crystal chandelier maria theresa for 12 light",
+    "title": "Crystal chandelier 12 light",
     "description": "Crystal chandelier maria theresa for 12 light",
     "price": 47,
     "discountPercentage": 16,

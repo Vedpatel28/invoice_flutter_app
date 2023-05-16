@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
-
 class product {
+
+  static int addcartproduct = 0;
+
   final int id;
   final String title;
   final String description;
@@ -8,7 +9,7 @@ class product {
   final String brand;
   final String category;
   final String thumbnail;
-  final List images;
+  // final List images;
 
   product({
     required this.id,
@@ -18,7 +19,7 @@ class product {
     required this.price,
     required this.thumbnail,
     required this.title,
-    required this.images,
+    // required this.images,
   });
 
   factory product.fromMap({required Map data}) {
@@ -30,7 +31,8 @@ class product {
       price: data['price'],
       thumbnail: data['thumbnail'],
       title: data['title'],
-      images: data['images'],
+      // images: data['images'],
     );
   }
+
 }

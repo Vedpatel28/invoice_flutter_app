@@ -35,7 +35,8 @@ class _homepageState extends State<homepage> {
             children: [
               IconButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed(allroutes.favouritproductsepage);
+                  Navigator.of(context)
+                      .pushNamed(allroutes.favouritproductsepage);
                 },
                 icon: Icon(
                   Icons.favorite_border_rounded,
@@ -115,77 +116,85 @@ class _homepageState extends State<homepage> {
                         height: s.height * 0.69,
                         child: GridView.builder(
                           itemCount: allproduct.length,
-                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisSpacing: 10,
                             mainAxisSpacing: 10,
                             childAspectRatio: 2 / 3,
                             crossAxisCount: 2,
                           ),
-                          itemBuilder: (context, index) {
-                            return GestureDetector(
-                              onTap: () {
-                                Navigator.of(context).pushNamed(allroutes.productdetailpage, arguments: index);
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  image: DecorationImage(
-                                    image: NetworkImage(allproduct[index].thumbnail),
-                                    fit: BoxFit.cover,
-                                  ),
-                                  // borderRadius: const BorderRadius.only(
-                                  //   topLeft: Radius.circular(20),
-                                  //   topRight: Radius.circular(20),
-                                  //   bottomLeft: Radius.circular(10),
-                                  //   bottomRight: Radius.circular(10),
-                                  // ),
-                                ),
-                                child: Row(
-                                  children: [
-                                    SizedBox(width: s.width * 0.02),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        // SizedBox(
-                                        //   height: s.height * 0.22,
-                                        //   width: double.infinity,
-                                        //   child: Image.network(
-                                        //     allproduct[index].thumbnail,
-                                        //     fit: BoxFit.fill,
-                                        //   ),
-                                        // ),
-                                        SizedBox(height: s.height * 0.1),
-                                        Text(
-                                          "\$ ${allproduct[index].price}",
-                                          style: GoogleFonts.tiroGurmukhi(
-                                            textStyle: TextStyle(
-                                              fontSize: s.height * 0.02,
-                                            ),
-                                          ),
-                                        ),
-                                        Text(
-                                          allproduct[index].brand,
-                                          style: GoogleFonts.tiroGurmukhi(
-                                            textStyle: TextStyle(
-                                              fontSize: s.height * 0.015,
-                                            ),
-                                          ),
-                                        ),
-                                        Text(
-                                          allproduct[index].title,
-                                          style: GoogleFonts.tiroGurmukhi(
-                                            textStyle: TextStyle(
-                                              fontSize: s.height * 0.015,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                          itemBuilder: (context, index) => Column(
+                            children: [
+                              Expanded(
+                                flex: 2,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context)
+                                        .pushNamed(allroutes.productdetailpage,arguments: index);
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      // borderRadius: BorderRadius.circular(20),
+                                      borderRadius: const BorderRadius.only(
+                                        topLeft: Radius.circular(20),
+                                        topRight: Radius.circular(20),
+                                        bottomLeft: Radius.circular(10),
+                                        bottomRight: Radius.circular(10),
+                                      ),
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                            allproduct[index].thumbnail),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
-                                  ],
+                                  ),
                                 ),
                               ),
-                            );
-                          },
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  height: 20,
+                                  width: double.infinity,
+                                  child: Row(
+                                    children: [
+                                      SizedBox(width: s.width * 0.02),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          SizedBox(height: s.height * 0.01),
+                                          Text(
+                                            "\$ ${allproduct[index].price}",
+                                            style: GoogleFonts.tiroGurmukhi(
+                                              textStyle: TextStyle(
+                                                fontSize: s.height * 0.02,
+                                              ),
+                                            ),
+                                          ),
+                                          Text(
+                                            allproduct[index].brand,
+                                            style: GoogleFonts.tiroGurmukhi(
+                                              textStyle: TextStyle(
+                                                fontSize: s.height * 0.015,
+                                              ),
+                                            ),
+                                          ),
+                                          Text(
+                                            allproduct[index].title,
+                                            style: GoogleFonts.tiroGurmukhi(
+                                              textStyle: TextStyle(
+                                                fontSize: s.height * 0.011,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -218,7 +227,8 @@ class _homepageState extends State<homepage> {
                   const Spacer(),
                   IconButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed(allroutes.favouritproductsepage);
+                      Navigator.of(context)
+                          .pushNamed(allroutes.favouritproductsepage);
                     },
                     icon: const Icon(
                       Icons.favorite_border_rounded,
