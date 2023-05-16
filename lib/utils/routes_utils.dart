@@ -5,4 +5,5 @@ class allroutes {
   static String userinfopage = 'userinfopage';
   static String favouritproductsepage = 'favourititomepage';
   static String invoicepage = 'invoicepage';
+  static String menupage = 'menupage';
 }

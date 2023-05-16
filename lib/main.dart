@@ -5,6 +5,7 @@ import 'package:invoice_app/views/screen/customer_info_page.dart';
 import 'package:invoice_app/views/screen/favourite_products_page.dart';
 import 'package:invoice_app/views/screen/homepage.dart';
 import 'package:invoice_app/views/screen/invoice_preview_page.dart';
+import 'package:invoice_app/views/screen/menu_page.dart';
 import 'package:invoice_app/views/screen/product_detail_page.dart';
 
 void main() {
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         allroutes.cartpage: (context) => const cart_page(),
         allroutes.favouritproductsepage: (context) => const favourite_product_page(),
         allroutes.invoicepage: (context) => const invoice_preview_page(),
+        allroutes.menupage: (context) => const menu_page(),
       },
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:invoice_app/utils/routes_utils.dart';
 
 class homepage extends StatefulWidget {
   const homepage({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class _homepageState extends State<homepage> {
     Size s = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        leading: const Icon(Icons.account_circle,color: Colors.transparent),
         // Shopping
         title: Text(
           "Shopping",
@@ -25,12 +27,16 @@ class _homepageState extends State<homepage> {
             ),
           ),
         ),
+        centerTitle: true,
         // Icons OF Like / Cart
         actions: [
           Row(
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushNamed(allroutes.favouritproductsepage);
+                },
                 icon: Icon(
                   Icons.favorite_border_rounded,
                   color: Colors.red.shade200,
@@ -39,7 +45,9 @@ class _homepageState extends State<homepage> {
               ),
               SizedBox(width: s.width * 0.001),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed(allroutes.cartpage);
+                },
                 icon: Icon(
                   Icons.shopping_cart_rounded,
                   size: s.height * 0.035,
@@ -70,55 +78,69 @@ class _homepageState extends State<homepage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: s.height * 0.02),
+                      SizedBox(height: s.height * 0.01),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: [
                             Container(
                               height: s.height * 0.045,
-                              width: s.width * 0.4,
-                              color: Colors.cyanAccent,
+                              width: s.width * 0.35,
+                              color: Colors.tealAccent.shade100,
                             ),
                             SizedBox(width: s.width * 0.05),
                             Container(
                               height: s.height * 0.05,
-                              width: s.width * 0.4,
-                              color: Colors.cyanAccent,
+                              width: s.width * 0.35,
+                              color: Colors.tealAccent.shade100,
                             ),
                             SizedBox(width: s.width * 0.05),
                             Container(
                               height: s.height * 0.05,
-                              width: s.width * 0.4,
-                              color: Colors.cyanAccent,
+                              width: s.width * 0.35,
+                              color: Colors.tealAccent.shade100,
                             ),
                             SizedBox(width: s.width * 0.05),
                             Container(
                               height: s.height * 0.05,
-                              width: s.width * 0.4,
-                              color: Colors.cyanAccent,
+                              width: s.width * 0.35,
+                              color: Colors.tealAccent.shade100,
                             ),
                           ],
                         ),
                       ),
                       SizedBox(height: s.height * 0.02),
-                      Container(
+                      SizedBox(
                         width: double.infinity,
-                        height: s.height * 0.67,
+                        height: s.height * 0.69,
                         child: GridView.builder(
                           itemCount: 10,
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisSpacing: 10,
                             mainAxisSpacing: 10,
-                            childAspectRatio: 2 / 2,
+                            childAspectRatio: 2 / 3,
                             crossAxisCount: 2,
                           ),
                           itemBuilder: (context, index) {
-                            return Container(
-                              height: 200,
-                              width: 300,
-                              color: Colors.deepOrange.shade100,
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.of(context)
+                                    .pushNamed(allroutes.productdetailpage);
+                              },
+                              child: Container(
+                                height: 200,
+                                width: 300,
+                                decoration: const BoxDecoration(
+                                  color: Colors.black26,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                    bottomLeft: Radius.circular(10),
+                                    bottomRight: Radius.circular(10),
+                                  ),
+                                ),
+                              ),
                             );
                           },
                         ),
@@ -128,30 +150,34 @@ class _homepageState extends State<homepage> {
                 ],
               ),
             ),
-            SizedBox(height: s.height * 0.01),
+            // SizedBox(height: s.height * 0.015),
             Container(
-              height: s.height * 0.07,
+              height: s.height * 0.064,
               width: double.infinity,
               alignment: Alignment.center,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(30),
                 ),
-                color: Colors.black,
               ),
               child: Row(
                 children: [
                   const Spacer(),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(allroutes.menupage);
+                    },
                     icon: const Icon(
-                      Icons.home,
+                      Icons.menu_rounded,
                       size: 40,
                     ),
                   ),
                   const Spacer(),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushNamed(allroutes.favouritproductsepage);
+                    },
                     icon: const Icon(
                       Icons.favorite_border_rounded,
                       size: 40,
@@ -159,7 +185,9 @@ class _homepageState extends State<homepage> {
                   ),
                   const Spacer(),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(allroutes.cartpage);
+                    },
                     icon: const Icon(
                       Icons.shopping_cart_rounded,
                       size: 40,
@@ -167,7 +195,9 @@ class _homepageState extends State<homepage> {
                   ),
                   const Spacer(),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(allroutes.userinfopage);
+                    },
                     icon: const Icon(
                       Icons.account_circle,
                       size: 40,
