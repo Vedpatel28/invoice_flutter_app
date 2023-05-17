@@ -1850,3 +1850,25 @@ List<Map> allpoductdetail = [
 ];
 
 List<product> allproduct = allpoductdetail.map((e) => product.fromMap(data: e)).toList();
+
+List mycategory = [
+  "smartphones",
+  "laptops",
+  "skincare",
+  "groceries",
+  "home-decoration",
+  "furniture",
+  "tops",
+  "womens-dresses",
+  "womens-shoes",
+  "mens-shirts",
+  "FREE FIRE",
+  "lighting",
+  "mens-watches",
+  "motorcycle",
+  "automotive",
+  "sunglasses",
+  "womens-jewellery",
+  "womens-bags",
+  "womens-watches",
+];

@@ -1,9 +1,4 @@
 class product {
-
-  static int addcartproduct = 0;
-
-  static List cartproductadd = [];
-
   final int id;
   final String title;
   final String description;
@@ -11,6 +6,7 @@ class product {
   final String brand;
   final String category;
   final String thumbnail;
+
   // final List images;
 
   product({
@@ -37,3 +33,6 @@ class product {
     );
   }
 }
+
+int addcartproduct = 1;
+List<product> cartproductadd = [];

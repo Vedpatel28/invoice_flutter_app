@@ -14,13 +14,8 @@ class product_detail_page extends StatefulWidget {
 class _product_detail_pageState extends State<product_detail_page> {
   @override
   Widget build(BuildContext context) {
-    Size s = MediaQuery
-        .of(context)
-        .size;
-    int index = ModalRoute
-        .of(context)!
-        .settings
-        .arguments as int;
+    Size s = MediaQuery.of(context).size;
+    int index = ModalRoute.of(context)!.settings.arguments as int;
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -42,8 +37,7 @@ class _product_detail_pageState extends State<product_detail_page> {
             children: [
               IconButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(allroutes.favouritproductsepage);
+                  Navigator.of(context).pushNamed(allroutes.favouritproductsepage);
                 },
                 icon: Icon(
                   Icons.favorite_border_rounded,
@@ -54,7 +48,7 @@ class _product_detail_pageState extends State<product_detail_page> {
               SizedBox(width: s.width * 0.001),
               IconButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed(allroutes.cartpage,arguments: index);
+                  Navigator.of(context).pushNamed(allroutes.cartpage, arguments: index);
                 },
                 icon: Icon(
                   Icons.shopping_cart_rounded,
@@ -90,19 +84,18 @@ class _product_detail_pageState extends State<product_detail_page> {
                     ),
                     itemCount: 1,
                     scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, indexin) =>
-                        SizedBox(
-                          height: s.height * 0.02,
-                          width: s.width * 0.05,
-                          child: SizedBox(
-                            width: s.width * 0.2,
-                            height: s.height * 0.2,
-                            child: Image.network(
-                              allproduct[index].thumbnail,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
+                    itemBuilder: (context, indexin) => SizedBox(
+                      height: s.height * 0.02,
+                      width: s.width * 0.05,
+                      child: SizedBox(
+                        width: s.width * 0.2,
+                        height: s.height * 0.2,
+                        child: Image.network(
+                          allproduct[index].thumbnail,
+                          fit: BoxFit.cover,
                         ),
+                      ),
+                    ),
                   ),
                 ),
                 // Transform.translate(offset: const Offset(340, 160),child: IconButton(onPressed: () {}, icon: Icon(Icons.navigate_next,size: s.height*0.05,color: Colors.black),)),
@@ -136,7 +129,6 @@ class _product_detail_pageState extends State<product_detail_page> {
                       const Spacer(),
                       IconButton(
                         onPressed: () {
-                          product.addcartproduct ++;
                           // product.cartproductadd.addAll(product(id: data['id'],
                           //     brand: data['brand'],
                           //     category: data['category'],
@@ -144,11 +136,10 @@ class _product_detail_pageState extends State<product_detail_page> {
                           //     price: data['price'],
                           //     thumbnail: data['thumbnail'],
                           //     title: data['title']) as Iterable)
-                          product.cartproductadd.add(product.addcartproduct);
+                          cartproductadd.add(allproduct[index]);
                           Navigator.of(context).pushNamed(allroutes.cartpage, arguments: index);
                         },
-                        icon: Icon(Icons.shopping_cart_outlined,
-                            size: s.height * 0.04),
+                        icon: Icon(Icons.shopping_cart_outlined, size: s.height * 0.04),
                       ),
                     ],
                   ),

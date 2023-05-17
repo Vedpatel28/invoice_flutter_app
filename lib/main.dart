@@ -7,6 +7,7 @@ import 'package:invoice_app/views/screen/homepage.dart';
 import 'package:invoice_app/views/screen/invoice_preview_page.dart';
 import 'package:invoice_app/views/screen/menu_page.dart';
 import 'package:invoice_app/views/screen/product_detail_page.dart';
+import 'package:invoice_app/views/screen/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,9 +21,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
+      initialRoute: allroutes.splashscreen,
       routes: {
         allroutes.homepage: (context) => const homepage(),
         allroutes.userinfopage: (context) => const customer_info_page(),
+        allroutes.splashscreen: (context) => const invoice_splash_page(),
         allroutes.productdetailpage: (context) => const product_detail_page(),
         allroutes.cartpage: (context) => const cart_page(),
         allroutes.favouritproductsepage: (context) => const favourite_product_page(),

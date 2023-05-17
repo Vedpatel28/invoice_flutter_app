@@ -11,6 +11,8 @@ class homepage extends StatefulWidget {
 }
 
 class _homepageState extends State<homepage> {
+  List myproduct = [];
+
   @override
   Widget build(BuildContext context) {
     Size s = MediaQuery.of(context).size;
@@ -29,35 +31,6 @@ class _homepageState extends State<homepage> {
           ),
         ),
         centerTitle: true,
-        // Icons OF Like / Cart
-        actions: [
-          Row(
-            children: [
-              // IconButton(
-              //   onPressed: () {
-              //     Navigator.of(context)
-              //         .pushNamed(allroutes.favouritproductsepage);
-              //   },
-              //   icon: Icon(
-              //     Icons.favorite_border_rounded,
-              //     color: Colors.red.shade200,
-              //     size: s.height * 0.035,
-              //   ),
-              // ),
-              SizedBox(width: s.width * 0.001),
-              // IconButton(
-              //   onPressed: () {
-              //     Navigator.of(context).pushNamed(allroutes.cartpage);
-              //   },
-              //   icon: Icon(
-              //     Icons.shopping_cart_rounded,
-              //     size: s.height * 0.035,
-              //     color: Colors.transparent,
-              //   ),
-              // ),
-            ],
-          )
-        ],
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -70,117 +43,121 @@ class _homepageState extends State<homepage> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "category",
-                        style: GoogleFonts.tiroGurmukhi(
-                          textStyle: TextStyle(
-                            fontSize: s.height * 0.03,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 2,
-                          ),
-                        ),
-                      ),
+                      // Text(
+                      //   "category",
+                      //   style: GoogleFonts.tiroGurmukhi(
+                      //     textStyle: TextStyle(
+                      //       fontSize: s.height * 0.03,
+                      //       fontWeight: FontWeight.bold,
+                      //       letterSpacing: 2,
+                      //     ),
+                      //   ),
+                      // ),
                       SizedBox(height: s.height * 0.01),
-                      SingleChildScrollView(
+                      const SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
-                          children: [
-                            GestureDetector(
-                              onTap: () {},
-                              child: Container(
-                                height: s.height * 0.045,
-                                width: s.width * 0.35,
-                                decoration: const BoxDecoration(
-                                  color: Colors.black26,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
-                                  ),
-                                ),
-                                // color: Colors.tealAccent.shade100,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "smartphones",
-                                  style: GoogleFonts.tiroGurmukhi(
-                                    textStyle: TextStyle(
-                                      fontSize: s.height * 0.02,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: s.width * 0.05),
-                            GestureDetector(
-                              onTap: () {},
-                              child: Container(
-                                height: s.height * 0.05,
-                                width: s.width * 0.35,
-                                decoration: const BoxDecoration(
-                                  color: Colors.black26,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
-                                  ),
-                                ),
-                                // color: Colors.tealAccent.shade100,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "laptops",
-                                  style: GoogleFonts.tiroGurmukhi(
-                                    textStyle: TextStyle(
-                                      fontSize: s.height * 0.02,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: s.width * 0.05),
-                            GestureDetector(
-                              onTap: () {},
-                              child: Container(
-                                height: s.height * 0.05,
-                                width: s.width * 0.35,
-                                decoration: const BoxDecoration(
-                                  color: Colors.black26,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
-                                  ),
-                                ),
-                                // color: Colors.tealAccent.shade100,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "fragrances",
-                                  style: GoogleFonts.tiroGurmukhi(
-                                    textStyle: TextStyle(
-                                      fontSize: s.height * 0.02,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: s.width * 0.05),
-                            GestureDetector(
-                              onTap: () {},
-                              child: Container(
-                                height: s.height * 0.05,
-                                width: s.width * 0.35,
-                                decoration: const BoxDecoration(
-                                  color: Colors.black26,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(20),
-                                  ),
-                                ),
-                                // color: Colors.tealAccent.shade100,
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "skincare",
-                                  style: GoogleFonts.tiroGurmukhi(
-                                    textStyle: TextStyle(
-                                      fontSize: s.height * 0.02,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+                          children: [],
+                          //     children: ListView.builder(
+                          //   itemBuilder: (context, index) {},
+                          // )
+                          // children: [
+                          //   // GestureDetector(
+                          //   //   onTap: () {},
+                          //   //   child: Container(
+                          //   //     height: s.height * 0.045,
+                          //   //     width: s.width * 0.35,
+                          //   //     decoration: const BoxDecoration(
+                          //   //       color: Colors.black26,
+                          //   //       borderRadius: BorderRadius.all(
+                          //   //         Radius.circular(20),
+                          //   //       ),
+                          //   //     ),
+                          //   //     // color: Colors.tealAccent.shade100,
+                          //   //     alignment: Alignment.center,
+                          //   //     child: Text(
+                          //   //       "smartphones",
+                          //   //       style: GoogleFonts.tiroGurmukhi(
+                          //   //         textStyle: TextStyle(
+                          //   //           fontSize: s.height * 0.02,
+                          //   //         ),
+                          //   //       ),
+                          //   //     ),
+                          //   //   ),
+                          //   // ),
+                          //   // SizedBox(width: s.width * 0.05),
+                          //   // GestureDetector(
+                          //   //   onTap: () {},
+                          //   //   child: Container(
+                          //   //     height: s.height * 0.05,
+                          //   //     width: s.width * 0.35,
+                          //   //     decoration: const BoxDecoration(
+                          //   //       color: Colors.black26,
+                          //   //       borderRadius: BorderRadius.all(
+                          //   //         Radius.circular(20),
+                          //   //       ),
+                          //   //     ),
+                          //   //     // color: Colors.tealAccent.shade100,
+                          //   //     alignment: Alignment.center,
+                          //   //     child: Text(
+                          //   //       "laptops",
+                          //   //       style: GoogleFonts.tiroGurmukhi(
+                          //   //         textStyle: TextStyle(
+                          //   //           fontSize: s.height * 0.02,
+                          //   //         ),
+                          //   //       ),
+                          //   //     ),
+                          //   //   ),
+                          //   // ),
+                          //   // SizedBox(width: s.width * 0.05),
+                          //   // GestureDetector(
+                          //   //   onTap: () {},
+                          //   //   child: Container(
+                          //   //     height: s.height * 0.05,
+                          //   //     width: s.width * 0.35,
+                          //   //     decoration: const BoxDecoration(
+                          //   //       color: Colors.black26,
+                          //   //       borderRadius: BorderRadius.all(
+                          //   //         Radius.circular(20),
+                          //   //       ),
+                          //   //     ),
+                          //   //     // color: Colors.tealAccent.shade100,
+                          //   //     alignment: Alignment.center,
+                          //   //     child: Text(
+                          //   //       "fragrances",
+                          //   //       style: GoogleFonts.tiroGurmukhi(
+                          //   //         textStyle: TextStyle(
+                          //   //           fontSize: s.height * 0.02,
+                          //   //         ),
+                          //   //       ),
+                          //   //     ),
+                          //   //   ),
+                          //   // ),
+                          //   // SizedBox(width: s.width * 0.05),
+                          //   // GestureDetector(
+                          //   //   onTap: () {},
+                          //   //   child: Container(
+                          //   //     height: s.height * 0.05,
+                          //   //     width: s.width * 0.35,
+                          //   //     decoration: const BoxDecoration(
+                          //   //       color: Colors.black26,
+                          //   //       borderRadius: BorderRadius.all(
+                          //   //         Radius.circular(20),
+                          //   //       ),
+                          //   //     ),
+                          //   //     // color: Colors.tealAccent.shade100,
+                          //   //     alignment: Alignment.center,
+                          //   //     child: Text(
+                          //   //       "skincare",
+                          //   //       style: GoogleFonts.tiroGurmukhi(
+                          //   //         textStyle: TextStyle(
+                          //   //           fontSize: s.height * 0.02,
+                          //   //         ),
+                          //   //       ),
+                          //   //     ),
+                          //   //   ),
+                          //   // ),
+                          // ],
                         ),
                       ),
                       SizedBox(height: s.height * 0.02),
@@ -189,8 +166,7 @@ class _homepageState extends State<homepage> {
                         height: s.height * 0.69,
                         child: GridView.builder(
                           itemCount: allproduct.length,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
+                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisSpacing: 10,
                             mainAxisSpacing: 10,
                             childAspectRatio: 2 / 3,
@@ -200,29 +176,53 @@ class _homepageState extends State<homepage> {
                             children: [
                               Expanded(
                                 flex: 2,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    Navigator.of(context).pushNamed(
-                                        allroutes.productdetailpage,
-                                        arguments: index);
-                                  },
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      // borderRadius: BorderRadius.circular(20),
-                                      borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(20),
-                                        topRight: Radius.circular(20),
-                                        bottomLeft: Radius.circular(10),
-                                        bottomRight: Radius.circular(10),
+                                child: (mycategory.isEmpty)
+                                    ? GestureDetector(
+                                        onTap: () {
+                                          Navigator.of(context).pushNamed(allroutes.productdetailpage, arguments: index);
+                                        },
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            // borderRadius: BorderRadius.circular(20),
+                                            borderRadius: const BorderRadius.only(
+                                              topLeft: Radius.circular(20),
+                                              topRight: Radius.circular(20),
+                                              bottomLeft: Radius.circular(10),
+                                              bottomRight: Radius.circular(10),
+                                            ),
+                                            image: DecorationImage(
+                                              image: NetworkImage(allproduct[index].thumbnail),
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    : GridView(
+                                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                          crossAxisCount: 2,
+                                        ),
+                                        children: List.generate(mycategory.length, (index) {
+                                          if (allproduct[index].category == mycategory) {
+                                            return Container(
+                                              child: Column(
+                                                children: [
+                                                  Container(
+                                                    width: s.width * 0.2,
+                                                    height: s.height * 0.05,
+                                                    decoration: BoxDecoration(
+                                                      image: DecorationImage(
+                                                          image: NetworkImage(allproduct[index].thumbnail), fit: BoxFit.cover),
+                                                    ),
+                                                  ),
+                                                  Text(allproduct[index].thumbnail),
+                                                ],
+                                              ),
+                                            );
+                                          } else {
+                                            return Container();
+                                          }
+                                        }),
                                       ),
-                                      image: DecorationImage(
-                                        image: NetworkImage(
-                                            allproduct[index].thumbnail),
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                ),
                               ),
                               Expanded(
                                 flex: 1,
@@ -233,8 +233,7 @@ class _homepageState extends State<homepage> {
                                     children: [
                                       SizedBox(width: s.width * 0.02),
                                       Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           SizedBox(height: s.height * 0.01),
                                           Text(
@@ -301,8 +300,7 @@ class _homepageState extends State<homepage> {
                   const Spacer(),
                   IconButton(
                     onPressed: () {
-                      Navigator.of(context)
-                          .pushNamed(allroutes.favouritproductsepage);
+                      Navigator.of(context).pushNamed(allroutes.favouritproductsepage);
                     },
                     icon: const Icon(
                       Icons.favorite_border_rounded,
