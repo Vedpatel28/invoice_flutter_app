@@ -2,6 +2,8 @@ class product {
 
   static int addcartproduct = 0;
 
+  static List cartproductadd = [];
+
   final int id;
   final String title;
   final String description;
@@ -34,5 +36,4 @@ class product {
       // images: data['images'],
     );
   }
-
 }

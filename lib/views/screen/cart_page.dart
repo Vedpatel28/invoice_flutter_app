@@ -32,7 +32,51 @@ class _cart_pageState extends State<cart_page> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(12),
-        child: Row(children: [],),
+        child: ListView.builder(
+          itemCount: product.cartproductadd.length,
+          itemBuilder: (BuildContext context, int index) => Column(
+            children: [
+              SizedBox(height: s.height * 0.01),
+              Row(
+                children: [
+                  CircleAvatar(
+                    foregroundImage: NetworkImage(allproduct[inidex].thumbnail),
+                  ),
+                  SizedBox(
+                    width: s.width * 0.05,
+                  ),
+                  Text(allproduct[index].title),
+                  const Spacer(),
+                  Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          setState(() {
+                            if(product.addcartproduct < 0){
+                              product.cartproductadd.remove(index);
+                            }
+                            product.addcartproduct--;
+                          });
+                        },
+                        icon: const Icon(Icons.remove_rounded),
+                      ),
+                      Text("${product.addcartproduct}"),
+                      IconButton(
+                        onPressed: () {
+                          if(product.addcartproduct == 0){
+                            product.cartproductadd.remove(index);
+                          }
+                          product.addcartproduct++;
+                        },
+                        icon: const Icon(Icons.add),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

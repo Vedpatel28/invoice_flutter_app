@@ -33,27 +33,28 @@ class _homepageState extends State<homepage> {
         actions: [
           Row(
             children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(allroutes.favouritproductsepage);
-                },
-                icon: Icon(
-                  Icons.favorite_border_rounded,
-                  color: Colors.red.shade200,
-                  size: s.height * 0.035,
-                ),
-              ),
+              // IconButton(
+              //   onPressed: () {
+              //     Navigator.of(context)
+              //         .pushNamed(allroutes.favouritproductsepage);
+              //   },
+              //   icon: Icon(
+              //     Icons.favorite_border_rounded,
+              //     color: Colors.red.shade200,
+              //     size: s.height * 0.035,
+              //   ),
+              // ),
               SizedBox(width: s.width * 0.001),
-              IconButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed(allroutes.cartpage);
-                },
-                icon: Icon(
-                  Icons.shopping_cart_rounded,
-                  size: s.height * 0.035,
-                ),
-              ),
+              // IconButton(
+              //   onPressed: () {
+              //     Navigator.of(context).pushNamed(allroutes.cartpage);
+              //   },
+              //   icon: Icon(
+              //     Icons.shopping_cart_rounded,
+              //     size: s.height * 0.035,
+              //     color: Colors.transparent,
+              //   ),
+              // ),
             ],
           )
         ],
@@ -84,28 +85,100 @@ class _homepageState extends State<homepage> {
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: [
-                            Container(
-                              height: s.height * 0.045,
-                              width: s.width * 0.35,
-                              color: Colors.tealAccent.shade100,
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                height: s.height * 0.045,
+                                width: s.width * 0.35,
+                                decoration: const BoxDecoration(
+                                  color: Colors.black26,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(20),
+                                  ),
+                                ),
+                                // color: Colors.tealAccent.shade100,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "smartphones",
+                                  style: GoogleFonts.tiroGurmukhi(
+                                    textStyle: TextStyle(
+                                      fontSize: s.height * 0.02,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                             SizedBox(width: s.width * 0.05),
-                            Container(
-                              height: s.height * 0.05,
-                              width: s.width * 0.35,
-                              color: Colors.tealAccent.shade100,
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                height: s.height * 0.05,
+                                width: s.width * 0.35,
+                                decoration: const BoxDecoration(
+                                  color: Colors.black26,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(20),
+                                  ),
+                                ),
+                                // color: Colors.tealAccent.shade100,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "laptops",
+                                  style: GoogleFonts.tiroGurmukhi(
+                                    textStyle: TextStyle(
+                                      fontSize: s.height * 0.02,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                             SizedBox(width: s.width * 0.05),
-                            Container(
-                              height: s.height * 0.05,
-                              width: s.width * 0.35,
-                              color: Colors.tealAccent.shade100,
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                height: s.height * 0.05,
+                                width: s.width * 0.35,
+                                decoration: const BoxDecoration(
+                                  color: Colors.black26,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(20),
+                                  ),
+                                ),
+                                // color: Colors.tealAccent.shade100,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "fragrances",
+                                  style: GoogleFonts.tiroGurmukhi(
+                                    textStyle: TextStyle(
+                                      fontSize: s.height * 0.02,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                             SizedBox(width: s.width * 0.05),
-                            Container(
-                              height: s.height * 0.05,
-                              width: s.width * 0.35,
-                              color: Colors.tealAccent.shade100,
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                height: s.height * 0.05,
+                                width: s.width * 0.35,
+                                decoration: const BoxDecoration(
+                                  color: Colors.black26,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(20),
+                                  ),
+                                ),
+                                // color: Colors.tealAccent.shade100,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "skincare",
+                                  style: GoogleFonts.tiroGurmukhi(
+                                    textStyle: TextStyle(
+                                      fontSize: s.height * 0.02,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -129,8 +202,9 @@ class _homepageState extends State<homepage> {
                                 flex: 2,
                                 child: GestureDetector(
                                   onTap: () {
-                                    Navigator.of(context)
-                                        .pushNamed(allroutes.productdetailpage,arguments: index);
+                                    Navigator.of(context).pushNamed(
+                                        allroutes.productdetailpage,
+                                        arguments: index);
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
