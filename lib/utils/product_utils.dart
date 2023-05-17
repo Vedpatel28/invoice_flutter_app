@@ -1,3 +1,5 @@
+import 'package:invoice_app/modal/pro_modals.dart';
+
 class product {
   final int id;
   final String title;
@@ -35,4 +37,9 @@ class product {
 }
 
 int addcartproduct = 1;
+
 List<product> cartproductadd = [];
+
+List<product> favouriteproducts = [];
+
+int index = allproduct.length;

@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts:
   flutter_spinkit:
+  curved_navigation_bar:
+  carousel_slider:
 
 dev_dependencies:
   flutter_test:

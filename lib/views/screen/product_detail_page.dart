@@ -32,32 +32,34 @@ class _product_detail_pageState extends State<product_detail_page> {
         ),
         centerTitle: true,
         // Icons OF Like / Cart
-        actions: [
-          Row(
-            children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed(allroutes.favouritproductsepage);
-                },
-                icon: Icon(
-                  Icons.favorite_border_rounded,
-                  color: Colors.red.shade200,
-                  size: s.height * 0.035,
-                ),
-              ),
-              SizedBox(width: s.width * 0.001),
-              IconButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed(allroutes.cartpage, arguments: index);
-                },
-                icon: Icon(
-                  Icons.shopping_cart_rounded,
-                  size: s.height * 0.035,
-                ),
-              ),
-            ],
-          )
-        ],
+        // actions: [
+        //   Row(
+        //     children: [
+        //       IconButton(
+        //         onPressed: () {
+        //           Navigator.of(context)
+        //               .pushNamed(allroutes.favouritproductsepage);
+        //         },
+        //         icon: Icon(
+        //           Icons.favorite_border_rounded,
+        //           color: Colors.red.shade200,
+        //           size: s.height * 0.035,
+        //         ),
+        //       ),
+        //       SizedBox(width: s.width * 0.001),
+        //       IconButton(
+        //         onPressed: () {
+        //           Navigator.of(context)
+        //               .pushNamed(allroutes.cartpage, arguments: index);
+        //         },
+        //         icon: Icon(
+        //           Icons.shopping_cart_rounded,
+        //           size: s.height * 0.035,
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // ],
         backgroundColor: Colors.transparent,
       ),
       body: Padding(
@@ -76,7 +78,8 @@ class _product_detail_pageState extends State<product_detail_page> {
                   ),
                   // product Preview
                   child: GridView.builder(
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                       childAspectRatio: 2 / 3,
@@ -98,7 +101,22 @@ class _product_detail_pageState extends State<product_detail_page> {
                     ),
                   ),
                 ),
-                // Transform.translate(offset: const Offset(340, 160),child: IconButton(onPressed: () {}, icon: Icon(Icons.navigate_next,size: s.height*0.05,color: Colors.black),)),
+                // Transform.translate(
+                //   offset: const Offset(320, 10),
+                //   child: IconButton(
+                //     onPressed: () {
+                //       favouriteproducts.add(allproduct[index]);
+                //       Navigator.of(context).pushNamed(
+                //           allroutes.favouritproductsepage,
+                //           arguments: index);
+                //     },
+                //     icon: Icon(
+                //       Icons.favorite_border_rounded,
+                //       size: s.height * 0.05,
+                //       color: Colors.redAccent,
+                //     ),
+                //   ),
+                // ),
               ],
             ),
             SizedBox(height: s.height * 0.01),
@@ -129,17 +147,22 @@ class _product_detail_pageState extends State<product_detail_page> {
                       const Spacer(),
                       IconButton(
                         onPressed: () {
-                          // product.cartproductadd.addAll(product(id: data['id'],
-                          //     brand: data['brand'],
-                          //     category: data['category'],
-                          //     description: data['description'],
-                          //     price: data['price'],
-                          //     thumbnail: data['thumbnail'],
-                          //     title: data['title']) as Iterable)
-                          cartproductadd.add(allproduct[index]);
-                          Navigator.of(context).pushNamed(allroutes.cartpage, arguments: index);
+                          favouriteproducts.add(allproduct[index]);
+                          Navigator.of(context).pushNamed(
+                              allroutes.favouritproductsepage,
+                              arguments: index);
                         },
-                        icon: Icon(Icons.shopping_cart_outlined, size: s.height * 0.04),
+                        icon:
+                            Icon(Icons.favorite_border, size: s.height * 0.04),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          cartproductadd.add(allproduct[index]);
+                          Navigator.of(context)
+                              .pushNamed(allroutes.cartpage, arguments: index);
+                        },
+                        icon: Icon(Icons.shopping_cart_outlined,
+                            size: s.height * 0.04),
                       ),
                     ],
                   ),
@@ -165,6 +188,9 @@ class _product_detail_pageState extends State<product_detail_page> {
                   color: Colors.grey,
                 ),
               ),
+            ),
+            SizedBox(
+              height: s.height * 0.02,
             ),
           ],
         ),
