@@ -70,20 +70,20 @@ class _cart_pageState extends State<cart_page> {
                         onPressed: () {
                           setState(() {
                             allproduct[index].price * addcartproduct;
-                            if (addcartproduct < 2) {
-                              total = allproduct[index].price * addcartproduct;
+                            if (cartproductadd[index].qunt < 1) {
                               cartproductadd.remove(cartproductadd[index]);
+                            } else {
+                              cartproductadd[index].qunt--;
                             }
-                            addcartproduct--;
                           });
                         },
                         icon: const Icon(Icons.remove_rounded),
                       ),
-                      Text("$addcartproduct"),
+                      Text("${cartproductadd[index].qunt}"),
                       IconButton(
                         onPressed: () {
                           setState(() {
-                            addcartproduct++;
+                            cartproductadd[index].qunt++;
                           });
                         },
                         icon: const Icon(Icons.add),
@@ -105,30 +105,27 @@ class _cart_pageState extends State<cart_page> {
         index: 3,
         items: [
           GestureDetector(
-            onTap: () {
-              Navigator.of(context).pushNamed(allroutes.homepage);
-            },
-            child: const Icon(Icons.home_filled, size: 30),
-          ),
+              onTap: () {
+                Navigator.of(context).pushNamed(allroutes.homepage);
+              },
+              child: const Icon(Icons.home_rounded, size: 30)),
           GestureDetector(
-            onTap: () {
-              Navigator.of(context).pushNamed(allroutes.userinfopage);
-            },
-            child: const Icon(Icons.account_circle_outlined, size: 30),
-          ),
+              onTap: () {
+                Navigator.of(context).pushNamed(allroutes.userinfopage);
+              },
+              child: const Icon(Icons.account_circle_outlined, size: 30)),
           GestureDetector(
-            onTap: () {
-              Navigator.of(context).pushNamed(allroutes.favouritproductsepage);
-            },
-            child: const Icon(Icons.favorite, size: 30),
-          ),
+              onTap: () {
+                Navigator.of(context)
+                    .pushNamed(allroutes.menupage);
+              },
+              child: const Icon(Icons.menu_rounded, size: 30)),
           GestureDetector(
-            onTap: () {
-              Navigator.of(context)
-                  .pushNamed(allroutes.cartpage, arguments: index);
-            },
-            child: const Icon(Icons.shopping_cart_outlined, size: 30),
-          ),
+              onTap: () {
+                Navigator.of(context)
+                    .pushNamed(allroutes.cartpage);
+              },
+              child: const Icon(Icons.shopping_cart_outlined, size: 30)),
         ],
       ),
     );

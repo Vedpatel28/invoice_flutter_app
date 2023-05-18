@@ -147,19 +147,28 @@ class _product_detail_pageState extends State<product_detail_page> {
                       const Spacer(),
                       IconButton(
                         onPressed: () {
+                          if (allproduct[index] == allproduct[index]) {
+                            favouriteproducts.remove(allproduct[index]);
+                          }
                           favouriteproducts.add(allproduct[index]);
                           Navigator.of(context).pushNamed(
-                              allroutes.favouritproductsepage,
-                              arguments: index);
+                            allroutes.favouritproductsepage,
+                            arguments: index,
+                          );
                         },
                         icon:
                             Icon(Icons.favorite_border, size: s.height * 0.04),
                       ),
                       IconButton(
                         onPressed: () {
+                          if (allproduct[index] == allproduct[index]) {
+                            cartproductadd.remove(allproduct[index]);
+                          }
                           cartproductadd.add(allproduct[index]);
-                          Navigator.of(context)
-                              .pushNamed(allroutes.cartpage, arguments: index);
+                          Navigator.of(context).pushNamed(
+                            allroutes.cartpage,
+                            arguments: index,
+                          );
                         },
                         icon: Icon(Icons.shopping_cart_outlined,
                             size: s.height * 0.04),

@@ -19,7 +19,7 @@ class _invoice_splash_page extends State<invoice_splash_page> {
 
   void changeScreen() {
     Timer.periodic(
-      const Duration(seconds: 5),
+      const Duration(seconds: 3),
       (timer) {
         setState(() {
           aniestyle = FlutterLogoStyle.horizontal;
@@ -63,12 +63,13 @@ class _invoice_splash_page extends State<invoice_splash_page> {
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: NetworkImage("https://cdn.dribbble.com/users/1465772/screenshots/5726748/____dri.gif"),
+                          image: NetworkImage(
+                              "https://cdn.dribbble.com/users/1465772/screenshots/5726748/____dri.gif"),
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 40),
                     SpinKitWave(
                       size: 90,
                       color: Colors.indigo.withOpacity(0.3),

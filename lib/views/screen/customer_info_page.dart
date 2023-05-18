@@ -37,7 +37,7 @@ class _customer_info_pageState extends State<customer_info_page> {
         ),
         centerTitle: true,
       ),
-      body: Padding(
+      body:Padding(
         padding: const EdgeInsets.all(16),
         child: SingleChildScrollView(
           child: Form(
@@ -96,7 +96,7 @@ class _customer_info_pageState extends State<customer_info_page> {
                                   alignment: Alignment.center,
                                   child: const Text(
                                       "Click Camera 📷 Button For Add Live Photo.\n"
-                                      "Click Gallery 🌌 Button For Add all ready Clicked Photo.\n"),
+                                          "Click Gallery 🌌 Button For Add all ready Clicked Photo.\n"),
                                 ),
                                 actions: [
                                   ElevatedButton.icon(
@@ -275,7 +275,7 @@ class _customer_info_pageState extends State<customer_info_page> {
               onTap: () {
                 Navigator.of(context).pushNamed(allroutes.homepage);
               },
-              child: const Icon(Icons.home_filled, size: 30)),
+              child: const Icon(Icons.home_rounded, size: 30)),
           GestureDetector(
               onTap: () {
                 Navigator.of(context).pushNamed(allroutes.userinfopage);
@@ -284,13 +284,13 @@ class _customer_info_pageState extends State<customer_info_page> {
           GestureDetector(
               onTap: () {
                 Navigator.of(context)
-                    .pushNamed(allroutes.favouritproductsepage);
+                    .pushNamed(allroutes.menupage);
               },
-              child: const Icon(Icons.favorite, size: 30)),
+              child: const Icon(Icons.menu_rounded, size: 30)),
           GestureDetector(
               onTap: () {
                 Navigator.of(context)
-                    .pushNamed(allroutes.cartpage, arguments: index);
+                    .pushNamed(allroutes.cartpage);
               },
               child: const Icon(Icons.shopping_cart_outlined, size: 30)),
         ],

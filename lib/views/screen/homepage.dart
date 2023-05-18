@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,32 +24,11 @@ class _homepageState extends State<homepage> {
   Widget build(BuildContext context) {
     ThemeData(
       useMaterial3: true,
-      appBarTheme: const AppBarTheme(
-        color: Colors.white,
-      ),
-      floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        backgroundColor: Colors.teal,
-        foregroundColor: Colors.black,
-      ),
     );
-    darkTheme:
     ThemeData(
       useMaterial3: true,
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: Colors.teal,
-        foregroundColor: Colors.black,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-        ),
-      ),
       brightness: Brightness.dark,
-      textTheme: const TextTheme(
-        bodyMedium: TextStyle(
-          color: Colors.white,
-        ),
-      ),
     );
-    ThemeMode:
     themechange ? ThemeMode.dark : ThemeMode.light;
     Size s = MediaQuery.of(context).size;
     return Scaffold(
@@ -67,6 +45,20 @@ class _homepageState extends State<homepage> {
             ),
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              setState(() {
+                themechange = !themechange;
+              });
+            },
+            icon: Icon(
+              themechange
+                  ? Icons.light_mode_outlined
+                  : Icons.dark_mode_outlined,
+            ),
+          ),
+        ],
         centerTitle: true,
       ),
       body: Padding(
@@ -269,10 +261,9 @@ class _homepageState extends State<homepage> {
               child: const Icon(Icons.account_circle_outlined, size: 30)),
           GestureDetector(
               onTap: () {
-                Navigator.of(context)
-                    .pushNamed(allroutes.favouritproductsepage);
+                Navigator.of(context).pushNamed(allroutes.menupage);
               },
-              child: const Icon(Icons.favorite, size: 30)),
+              child: const Icon(Icons.menu_rounded, size: 30)),
           GestureDetector(
               onTap: () {
                 Navigator.of(context)

@@ -11,6 +11,7 @@ class product {
   final String category;
   final String thumbnail;
 
+   int qunt = 1;
   // final List images;
 
   product({
@@ -40,11 +41,14 @@ class product {
 
 int addcartproduct = 1;
 
+int addfavouritproduct = 1;
+
 List<product> cartproductadd = [];
 
 List<product> favouriteproducts = [];
 
 int index = allproduct.length;
+
 
 class allGlobalvar {
   static File? image;
