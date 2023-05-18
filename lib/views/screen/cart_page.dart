@@ -1,7 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:invoice_app/modal/pro_modals.dart';
 import 'package:invoice_app/utils/product_utils.dart';
 import 'package:invoice_app/utils/routes_utils.dart';
 
@@ -13,7 +12,8 @@ class cart_page extends StatefulWidget {
 }
 
 class _cart_pageState extends State<cart_page> {
-  int total = 0;
+
+  int titotal = 0 ;
 
   @override
   Widget build(BuildContext context) {
@@ -38,61 +38,85 @@ class _cart_pageState extends State<cart_page> {
         padding: const EdgeInsets.all(12),
         child: ListView.builder(
           itemCount: cartproductadd.length,
-          itemBuilder: (BuildContext context, int index) => Column(
-            children: [
-              SizedBox(height: s.height * 0.01),
-              // const Spacer(),
-              Row(
-                children: [
-                  // product Image
-                  CircleAvatar(
-                    foregroundImage:
-                        NetworkImage(cartproductadd[index].thumbnail),
-                  ),
-                  SizedBox(
-                    width: s.width * 0.05,
-                  ),
-                  // Product Title / Product Price
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // product Title
-                      Text(cartproductadd[index].title),
-                      // Product Price
-                      Text("\$ ${cartproductadd[index].price}"),
-                    ],
-                  ),
-                  const Spacer(),
-                  // Product Quantities
-                  Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          setState(() {
-                            allproduct[index].price * addcartproduct;
-                            if (cartproductadd[index].qunt < 1) {
-                              cartproductadd.remove(cartproductadd[index]);
-                            } else {
-                              cartproductadd[index].qunt--;
-                            }
-                          });
-                        },
-                        icon: const Icon(Icons.remove_rounded),
+          itemBuilder: (BuildContext context, int index) => Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                SizedBox(height: s.height * 0.01),
+                // const Spacer(),
+                Row(
+                  children: [
+                    // product Image
+                    CircleAvatar(
+                      foregroundImage:
+                          NetworkImage(cartproductadd[index].thumbnail),
+                    ),
+                    SizedBox(
+                      width: s.width * 0.05,
+                    ),
+                    // Product Title / Product Price
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // product Title
+                        Text(cartproductadd[index].title),
+                        // Product Price
+                        Text("\$ ${cartproductadd[index].price}"),
+                      ],
+                    ),
+                    const Spacer(),
+                    // Product Quantities
+                    Row(
+                      children: [
+                        IconButton(
+                          onPressed: () {
+                            setState(() {
+                              if (cartproductadd[index].qunt < 1) {
+                                cartproductadd.remove(cartproductadd[index]);
+                              } else {
+                                cartproductadd[index].qunt--;
+                              }
+                            });
+                          },
+                          icon: const Icon(Icons.remove_rounded),
+                        ),
+                        Text("${cartproductadd[index].qunt}"),
+                        IconButton(
+                          onPressed: () {
+                            setState(() {
+                              cartproductadd[index].qunt++;
+                              titotal = cartproductadd[index].price * cartproductadd[index].qunt;
+                            });
+                          },
+                          icon: const Icon(Icons.add),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                GestureDetector(
+                  onTap: () {
+                    titotal = cartproductadd[index].price * cartproductadd[index].qunt;
+                    total.add(titotal);
+                  },
+                  child: Container(
+                    height: s.height * 0.05,
+                    width: s.width * 0.5,
+                    // color: Colors.blue,
+                    alignment:const Alignment(1.0,-1),
+                    child: Text(
+                      "  Total : ${cartproductadd[index].price * cartproductadd[index].qunt}",
+                      style: GoogleFonts.tiroGurmukhi(
+                        textStyle: TextStyle(
+                          fontSize: s.height * 0.02,
+                        ),
                       ),
-                      Text("${cartproductadd[index].qunt}"),
-                      IconButton(
-                        onPressed: () {
-                          setState(() {
-                            cartproductadd[index].qunt++;
-                          });
-                        },
-                        icon: const Icon(Icons.add),
-                      ),
-                    ],
+                    ),
                   ),
-                ],
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -116,14 +140,12 @@ class _cart_pageState extends State<cart_page> {
               child: const Icon(Icons.account_circle_outlined, size: 30)),
           GestureDetector(
               onTap: () {
-                Navigator.of(context)
-                    .pushNamed(allroutes.menupage);
+                Navigator.of(context).pushNamed(allroutes.menupage);
               },
               child: const Icon(Icons.menu_rounded, size: 30)),
           GestureDetector(
               onTap: () {
-                Navigator.of(context)
-                    .pushNamed(allroutes.cartpage);
+                Navigator.of(context).pushNamed(allroutes.cartpage);
               },
               child: const Icon(Icons.shopping_cart_outlined, size: 30)),
         ],

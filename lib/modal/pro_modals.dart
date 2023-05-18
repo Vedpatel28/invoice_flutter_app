@@ -1,3 +1,4 @@
+
 import 'package:invoice_app/utils/product_utils.dart';
 
 List<Map> allpoductdetail = [
@@ -1872,3 +1873,17 @@ List mycategory = [
   "womens-bags",
   "womens-watches",
 ];
+
+class contacts {
+  late String firstname;
+  late String lastname;
+  late String Contact;
+  late String email;
+
+  contacts({
+    required this.firstname,
+    required this.lastname,
+    required this.Contact,
+    required this.email,
+  });
+}

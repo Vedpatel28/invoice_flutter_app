@@ -1,4 +1,3 @@
-import 'dart:io';
 
 import 'package:invoice_app/modal/pro_modals.dart';
 
@@ -11,7 +10,8 @@ class product {
   final String category;
   final String thumbnail;
 
-   int qunt = 1;
+  int qunt = 1;
+
   // final List images;
 
   product({
@@ -39,9 +39,9 @@ class product {
   }
 }
 
-int addcartproduct = 1;
-
 int addfavouritproduct = 1;
+
+List<int> total = [];
 
 List<product> cartproductadd = [];
 
@@ -49,11 +49,12 @@ List<product> favouriteproducts = [];
 
 int index = allproduct.length;
 
-
 class allGlobalvar {
-  static File? image;
-  static String? Fname;
-  static String? Lname;
-  static String? Email;
-  static String? Pnumber;
+  static String Fname = '';
+  static String Lname = '';
+  static String Email = '';
+  static String Pnumber = '';
+  static String Address = '';
+
+  static List<contacts> allContact = [];
 }

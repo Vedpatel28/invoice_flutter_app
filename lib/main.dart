@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:invoice_app/utils/routes_utils.dart';
+import 'package:invoice_app/views/screen/account_com_page.dart';
 import 'package:invoice_app/views/screen/cart_page.dart';
 import 'package:invoice_app/views/screen/customer_info_page.dart';
 import 'package:invoice_app/views/screen/favourite_products_page.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
       routes: {
         allroutes.homepage: (context) => const homepage(),
         allroutes.userinfopage: (context) => const customer_info_page(),
+        allroutes.accountpage: (context) => const account_com_page(),
         allroutes.splashscreen: (context) => const invoice_splash_page(),
         allroutes.productdetailpage: (context) => const product_detail_page(),
         allroutes.cartpage: (context) => const cart_page(),

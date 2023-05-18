@@ -1,7 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:invoice_app/modal/pro_modals.dart';
 import 'package:invoice_app/utils/product_utils.dart';
 import 'package:invoice_app/utils/routes_utils.dart';
 

@@ -19,7 +19,7 @@ class _invoice_splash_page extends State<invoice_splash_page> {
 
   void changeScreen() {
     Timer.periodic(
-      const Duration(seconds: 3),
+      const Duration(seconds: 6),
       (timer) {
         setState(() {
           aniestyle = FlutterLogoStyle.horizontal;
