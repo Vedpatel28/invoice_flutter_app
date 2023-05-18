@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:invoice_app/modal/pro_modals.dart';
 
 class product {
@@ -43,3 +45,11 @@ List<product> cartproductadd = [];
 List<product> favouriteproducts = [];
 
 int index = allproduct.length;
+
+class allGlobalvar {
+  static File? image;
+  static String? Fname;
+  static String? Lname;
+  static String? Email;
+  static String? Pnumber;
+}
